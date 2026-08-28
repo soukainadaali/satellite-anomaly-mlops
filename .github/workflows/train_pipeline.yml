@@ -1,0 +1,23 @@
+name: Train and Register Anomaly Model
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}       # allows manual "Run workflow" button in GitHub UI
+  repository_dispatch:
+    types: [new-data]         # fired by the Logic App (SD-24) when new data lands in raw/
+
+jobs:
+  run-pipeline:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Azure ML pipeline
+        shell: powershell
+        run: |
+          & "C:\Users\hp\azureml-env\Scripts\Activate.ps1"
+          cd src\pipeline
+          python pipeline.py
