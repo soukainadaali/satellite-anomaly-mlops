@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch: {}       # allows manual "Run workflow" button in GitHub UI
   repository_dispatch:
-    types: [new-data]         # fired by the Logic App (SD-24) when new data lands in raw/
+    types: [new-data]         # fired by the Logic App when new data lands in raw/
 
 jobs:
   run-pipeline:
