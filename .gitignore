@@ -1,0 +1,45 @@
+# Data (download separately, see README)
+src/data/raw/
+src/data/processed/
+*.npy
+
+# Model artifacts
+src/data/models/
+model_backups/
+*.keras
+*.h5
+
+# Azure ML job outputs downloaded locally
+downloaded_outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+azureml-env/
+
+# Secrets and local config
+.env
+.env.*
+config.json
+.azureml/
+
+# MLflow local runs
+mlruns/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code project notes (local only)
+CLAUDE.md
+.claude/
